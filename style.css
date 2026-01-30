@@ -111,9 +111,23 @@ header {
   text-align:center;
   padding:8px;
   text-decoration:none;
+  cursor:pointer;
 }
 
 .pay:hover {
   background:red;
   color:black;
+}
+
+.newsletter {
+  text-align:center;
+  padding:20px;
+}
+
+.newsletter input {
+  padding:10px;
+  width:250px;
+  background:black;
+  border:1px solid red;
+  color:red;
 }
