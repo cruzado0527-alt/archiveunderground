@@ -2,43 +2,54 @@ const songs = [
   {
     title: "PURULENT - Patología Grotesca",
     file: "music/PURULENT -Patología Grotesca.mp3",
-    lore: "Registro patológico prohibido."
+    cover: "covers/purulent.jpg",
+    lore: "El encuentro entre lo grotesco y lo patologico se encuentra acá, perversion del  cuerpo humano."
   },
   {
     title: "Leishmaniasis - Whore Smashing Hammer",
     file: "music/Leishmaniasis -Whore Smashing Hammer full album.mp3",
-    lore: "Grabación incautada."
+    cover: "covers/leishmaniasis.jpg",
+    lore: "Gore bogotano, brutal death puro."
   },
   {
     title: "FORENSE - Full Disco",
     file: "music/FORENSE-Full Disco.mp3",
-    lore: "Evidencia sonora."
+    cover: "covers/forense.jpg",
+    lore: "Criminologia y expedientes vomitivos para pocos gustos."
   }
 ];
 
 let current = 0;
+
 const player = document.getElementById("player");
 const title = document.getElementById("songTitle");
 const lore = document.getElementById("songLore");
+const playlist = document.getElementById("playlist");
 
-function loadSong(){
-  player.src = songs[current].file;
-  title.textContent = songs[current].title;
-  lore.textContent = songs[current].lore;
+function loadSong(i) {
+  current = i;
+  player.src = songs[i].file;
+  title.textContent = songs[i].title;
+  lore.textContent = songs[i].lore;
+  player.play();
 }
 
-player.addEventListener("ended", () => {
-  current = (current + 1) % songs.length;
-  loadSong();
-  player.play();
+songs.forEach((song, i) => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <img src="${song.cover}" style="width:100%; border:1px solid red;">
+    <h2>${song.title}</h2>
+    <p>${song.lore}</p>
+    <button class="pay">REPRODUCIR</button>
+  `;
+
+  card.querySelector("button").addEventListener("click", () => {
+    loadSong(i);
+  });
+
+  playlist.appendChild(card);
 });
 
-function toggleFullscreen(){
-  if(!document.fullscreenElement){
-    document.documentElement.requestFullscreen();
-  } else {
-    document.exitFullscreen();
-  }
-}
-
-loadSong();
+loadSong(0);

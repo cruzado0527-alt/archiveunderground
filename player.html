@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>REPRODUCTOR RITUAL</title>
@@ -10,11 +10,20 @@
 <h1 class="logo glitch" data-text="TRANSMISIÓN PIRATA">TRANSMISIÓN PIRATA</h1>
 
 <div class="card">
-<audio id="player" controls></audio>
-<p id="songTitle"></p>
-<p id="songLore"></p>
-<button class="pay" onclick="toggleFullscreen()">PANTALLA COMPLETA</button>
+  <p style="font-size:12px; color:#aaa;">
+    ARCHIVEUNDERGROUND no es dueño de ninguno de los materiales reproducidos aquí.  
+    Todos los derechos pertenecen a sus respectivas bandas y sellos.  
+    Este archivo existe con fines de difusión cultural underground.
+  </p>
 </div>
+
+<div class="card">
+  <audio id="player" controls></audio>
+  <p id="songTitle"></p>
+  <p id="songLore"></p>
+</div>
+
+<div id="playlist" class="productos"></div>
 
 <script src="player.js"></script>
 </body>
