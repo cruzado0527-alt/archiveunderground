@@ -8,9 +8,16 @@
 
 <body>
 
+<audio id="ambiente" loop>
+  <source src="ambiente.mp3" type="audio/mpeg">
+</audio>
+
 <header>
   <h1 class="logo glitch" data-text="ARCHIVEUNDERGROUND">ARCHIVEUNDERGROUND</h1>
   <p>Archivo extremo – punk, metal, ruido, resistencia</p>
+  <button onclick="document.getElementById('ambiente').play()" class="pay">
+    ACTIVAR RUIDO
+  </button>
 </header>
 
 <main id="productos" class="productos"></main>
