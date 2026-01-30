@@ -1,10 +1,13 @@
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box;}
 body {
   background:black;
-  color:#e00000;
+  color:red;
   font-family: monospace;
-  margin:0;
+  line-height:1.5;
 }
 
+/* HEADER */
 header {
   text-align:center;
   padding:40px;
@@ -14,61 +17,31 @@ header {
 .logo {
   font-size:48px;
   letter-spacing:5px;
+  position:relative;
 }
 
 .glitch {
-  position:relative;
   color:red;
   animation: glitch 1s infinite;
+  position:relative;
 }
 
 .glitch::before,
 .glitch::after {
   content: attr(data-text);
   position:absolute;
-  left:0;
-  top:0;
+  left:0; top:0;
 }
 
-.glitch::before {
-  color:cyan;
-  animation: glitchTop 0.8s infinite;
-}
+.glitch::before {color:cyan; animation: glitchTop 0.8s infinite;}
+.glitch::after {color:magenta; animation: glitchBottom 1.2s infinite;}
 
-.glitch::after {
-  color:magenta;
-  animation: glitchBottom 1.2s infinite;
-}
+@keyframes glitch {0% {transform: translate(0);} 20% {transform: translate(-2px,2px);} 40% {transform: translate(2px,-2px);} 60% {transform: translate(-1px,1px);} 80% {transform: translate(1px,-1px);} 100% {transform: translate(0);}}
+@keyframes glitchTop {0% {clip-path: inset(0 0 80% 0);} 50% {clip-path: inset(10% 0 60% 0);} 100% {clip-path: inset(0 0 80% 0);}}
+@keyframes glitchBottom {0% {clip-path: inset(60% 0 0 0);} 50% {clip-path: inset(40% 0 20% 0);} 100% {clip-path: inset(60% 0 0 0);}}
 
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px,2px); }
-  40% { transform: translate(2px,-2px); }
-  60% { transform: translate(-1px,1px); }
-  80% { transform: translate(1px,-1px); }
-  100% { transform: translate(0); }
-}
-
-@keyframes glitchTop {
-  0% { clip-path: inset(0 0 80% 0); }
-  50% { clip-path: inset(10% 0 60% 0); }
-  100% { clip-path: inset(0 0 80% 0); }
-}
-
-@keyframes glitchBottom {
-  0% { clip-path: inset(60% 0 0 0); }
-  50% { clip-path: inset(40% 0 20% 0); }
-  100% { clip-path: inset(60% 0 0 0); }
-}
-
-.productos {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:25px;
-  padding:30px;
-}
-
+/* PRODUCTOS */
+.productos {display:flex; flex-wrap:wrap; justify-content:center; gap:25px; padding:30px;}
 .card {
   width:280px;
   background:#060606;
@@ -76,32 +49,13 @@ header {
   padding:15px;
   transition:0.3s;
 }
+.card:hover {transform: scale(1.05); box-shadow:0 0 15px red;}
+.card img {width:100%; border:1px solid #400;}
+.card h2 {font-size:18px;}
+.card p {font-size:13px; color:#aaa;}
+.card span {display:block; margin:10px 0; font-size:16px;}
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow:0 0 15px red;
-}
-
-.card img {
-  width:100%;
-  border:1px solid #400;
-}
-
-.card h2 {
-  font-size:18px;
-}
-
-.card p {
-  font-size:13px;
-  color:#aaa;
-}
-
-.card span {
-  display:block;
-  margin:10px 0;
-  font-size:16px;
-}
-
+/* BOTONES Y LINKS */
 .pay {
   display:block;
   margin-top:8px;
@@ -113,17 +67,10 @@ header {
   text-decoration:none;
   cursor:pointer;
 }
+.pay:hover {background:red; color:black;}
 
-.pay:hover {
-  background:red;
-  color:black;
-}
-
-.newsletter {
-  text-align:center;
-  padding:20px;
-}
-
+/* NEWSLETTER */
+.newsletter {text-align:center; padding:20px;}
 .newsletter input {
   padding:10px;
   width:250px;
@@ -131,3 +78,6 @@ header {
   border:1px solid red;
   color:red;
 }
+
+/* FOOTER */
+footer {text-align:center; padding:20px; border-top:2px solid red;}
