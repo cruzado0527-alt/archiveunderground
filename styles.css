@@ -1,0 +1,34 @@
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle, #070707, #000000);
+  color: #cfcfcf;
+  font-family: 'Courier New', monospace;
+}
+.glitch {
+  font-size: 3rem;
+  text-align: center;
+  color: red;
+  text-shadow: 2px 0 cyan, -2px 0 magenta;
+  animation: glitch 0.15s infinite alternate;
+}
+@keyframes glitch {
+  0% { transform: translateX(-2px); }
+  100% { transform: translateX(2px); }
+}
+.panel {
+  background: rgba(0,0,0,0.85);
+  border: 1px solid red;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 25px red;
+}
+button {
+  background: black;
+  border: 1px solid red;
+  color: red;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+button:hover { background: red; color: black; }
