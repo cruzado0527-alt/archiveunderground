@@ -1,0 +1,6 @@
+body{background:black;color:red;font-family:monospace;margin:0;padding:0;text-align:center;}
+.logo{font-size:48px;margin:20px;}
+textarea,input[type=file]{width:200px;padding:8px;margin:5px;}
+button{background:darkred;color:lime;border:1px solid red;padding:8px;margin:5px;cursor:pointer;}
+.post{border:1px solid lime;padding:10px;width:200px;margin:10px auto;text-align:center;}
+.post img{width:100%;height:auto;margin-top:5px;}

@@ -1,0 +1,124 @@
+/* GENERAL */
+body {
+  background:black;
+  color:red;
+  font-family: monospace;
+  margin:0;
+  padding:0;
+}
+
+a {text-decoration:none;}
+h1,h2,h3,h4 {margin:10px 0;}
+p {margin:5px 0;}
+
+/* HEADER */
+header {text-align:center;padding:20px;}
+nav a {margin:5px;padding:8px;border:1px solid red;color:red;display:inline-block;}
+
+/* FOOTER */
+footer {text-align:center;padding:10px;border-top:1px solid red;margin-top:20px;}
+
+/* GLITCH LOGO */
+.logo {font-size:48px;}
+.glitch {
+  position: relative;
+  color: red;
+  animation: glitch 1s infinite;
+}
+@keyframes glitch {
+  0%{transform: translate(0)}
+  20%{transform: translate(-2px,2px)}
+  40%{transform: translate(2px,-2px)}
+  60%{transform: translate(-2px,-2px)}
+  80%{transform: translate(2px,2px)}
+  100%{transform: translate(0)}
+}
+
+/* BOTONES */
+button, .pay {
+  background:darkred;
+  color:lime;
+  border:1px solid red;
+  padding:8px;
+  cursor:pointer;
+  margin:5px 0;
+}
+
+/* CARDS */
+.card {
+  border:1px solid red;
+  padding:10px;
+  width:250px;
+  margin:10px;
+  background:black;
+  color:red;
+  text-align:center;
+}
+.card img {width:100%;height:auto;}
+
+/* PRODUCTOS */
+.productos {display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+
+/* PLAYER */
+.songGrid {display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;margin:20px 0;}
+.songCard {border:1px solid red;padding:10px;background:black;color:red;text-align:center;}
+.songCard img {width:100%;height:auto;}
+
+/* SPOTIFY ANIM */
+.spotifyAnim {
+  position: relative;
+  text-align: center;
+}
+
+.coverContainer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.coverContainer img {
+  width: 100%;
+  border-radius: 50%;
+  animation: spin 20s linear infinite;
+  border: 3px solid red;
+}
+
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+/* Barras tipo equalizer */
+.bars {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bars div {
+  background: lime;
+  width: 6px;
+  height: 20px;
+  animation: bounce 1s infinite;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+.bars div:nth-child(1){--i:0;}
+.bars div:nth-child(2){--i:1;}
+.bars div:nth-child(3){--i:2;}
+.bars div:nth-child(4){--i:3;}
+.bars div:nth-child(5){--i:4;}
+
+@keyframes bounce {
+  0%,100%{height: 20px;}
+  50%{height: 50px;}
+}
+
+/* SOCIAL */
+#auth, #feed {text-align:center;margin:20px;}
+#auth input, #feed textarea, #feed input[type="file"] {margin:5px;padding:8px;width:200px;}
+.post{border:1px solid lime;padding:10px;width:200px;margin:5px;}
+.post img{width:100%;height:auto;}

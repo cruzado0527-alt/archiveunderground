@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>BANDAS DEL ARCHIVO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1 class="logo glitch" data-text="BANDAS DEL ARCHIVO">BANDAS DEL ARCHIVO</h1>
+  <nav>
+    <a href="index.html" class="pay">INICIO</a>
+    <a href="player.html" class="pay">REPRODUCTOR RITUAL</a>
+  </nav>
+</header>
+
+<main>
+  <div id="bandas" class="productos"></div>
+</main>
+
+<footer>
+  <p>Movimiento underground no autorizado</p>
+</footer>
+
+<script src="player.js"></script>
+<script>
+  // Cargar bandas idénticas a las canciones
+  const contenedor = document.getElementById("bandas");
+  songs.forEach(banda => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img src="${banda.cover}" alt="${banda.title}">
+      <h2>${banda.title}</h2>
+      <p>${banda.lore}</p>
+    `;
+    contenedor.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
